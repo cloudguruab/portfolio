@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { NAME, ORG_IMAGE_URL } from "../lib/constants";
 
+// TODO: need to correct meta tag information
 export default function Meta() {
   return (
     <Head>
