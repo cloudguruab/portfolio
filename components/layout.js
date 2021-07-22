@@ -1,5 +1,4 @@
 import Hero from "./hero";
-import Bar from "./Bar"
 import Footer from "../components/footer";
 import Meta from "../components/meta";
 import Skills from "../components/skills";

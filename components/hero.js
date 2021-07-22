@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
 import Image from "next/image";
-import Contact from "./contact"; //TODO:
+import Contact from "./contact"; //TODO: load into components 
 import realadrianbxsvg from "../public/realadrianbxsvg.svg";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
