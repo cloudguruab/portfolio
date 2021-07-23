@@ -375,8 +375,8 @@ const navigation = [
             y2="32"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#BBBBBB" stop-opacity="0.1" />
-            <stop offset="1" stop-opacity="0.1" />
+            {/* <stop stop-color="#BBBBBB" stop-opacity="0.1" />
+            <stop offset="1" stop-opacity="0.1" /> */}
           </linearGradient>
         </defs>
       </svg>

@@ -6,6 +6,23 @@ import { XIcon } from "@heroicons/react/outline";
 export default function Contact() {
   const [open, setOpen] = useState(true);
 
+  async function handleOnSubmit(e) {
+    e.preventDefault();
+
+    const formData = {};
+
+    Array.from(e.currentTarget.elements).forEach((field) => {
+      if (!field.name) return;
+      formData[field.name] = field.value;
+    });
+
+    await fetch("/api/mail", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+  }
+  
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -57,20 +74,27 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="mt-6 relative flex-1 px-4 sm:px-6">
-                    {/* Replace with your content */}
-                    <div className="bg-gray-300 shadow sm:rounded-lg">
+                    <div className="bg-gray-300 shadow-xl sm:rounded-lg">
                       <div className="px-4 py-5 md:p-6">
                         <h3 className="text-lg leading-6 font-medium text-gray-900">
                           Connect with me
                         </h3>
                         <div className="mt-3 max-w-xl text-sm text-gray-500">
                           <p>
-                            Leave your email along with a message containing who you are and how I can help!
+                            Leave your email along with a message containing who
+                            you are and how I can help!
                           </p>
                         </div>
-                        <form className="mt-5 sm:flex sm:items-center">
+                        <form
+                          className="mt-5 sm:flex sm:items-center"
+                          method="POST"
+                          onSubmit={handleOnSubmit}
+                        >
                           <div className="w-full ">
-                            <label htmlFor="email" className="sr-only">
+                            <label
+                              htmlFor="email"
+                              className="block text-sm font-medium text-gray-700"
+                            >
                               Email
                             </label>
                             <input
@@ -78,21 +102,25 @@ export default function Contact() {
                               name="email"
                               id="email"
                               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full h-8 text-sm border-gray-700 rounded-md"
-                              placeholder="you@example.com"
                             />
                             <div>
                               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                                 <div className="mt-1 sm:mt-0 sm:col-span-3">
+                                  <label
+                                    htmlFor="message"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Message
+                                  </label>
                                   <textarea
                                     id="message"
                                     name="message"
-                                    placeholder="message"
-                                    className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
+                                    className="max-w-lg mb-3 shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
                                     defaultValue={""}
                                   />
                                   <button
                                     type="submit"
-                                    className="w-full inline-flex items-center justify-center px-8 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-4 sm:text-sm"
+                                    className="w-full sm:mt-2 inline-flex items-center justify-center px-8 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
                                   >
                                     Submit
                                   </button>
@@ -103,8 +131,6 @@ export default function Contact() {
                         </form>
                       </div>
                     </div>
-
-                    {/* /End replace */}
                   </div>
                 </div>
               </div>
