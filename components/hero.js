@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router'
+import Link from "next/link";
 import Image from "next/image";
-import Contact from "./contact"; //TODO: load into components 
+import Contact from "../pages/contact"; //TODO: load into components
 import realadrianbxsvg from "../public/realadrianbxsvg.svg";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
@@ -127,13 +127,15 @@ export default function Example() {
                   </div>
                   <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
                     <span className="inline-flex rounded-md shadow">
-                      <a
-                        href="#"
-                        className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green-400 hover:bg-indigo-400"
-                      >
-                        Contact
-                        {/* contact component here */}
-                      </a>
+                      <Link href={"/contact"}>
+                        <a
+                          // href="#"
+                          className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green-400 hover:bg-indigo-400"
+                        >
+                          Contact
+                          {/* contact component here */}
+                        </a>
+                      </Link>
                     </span>
                   </div>
                 </nav>
@@ -200,9 +202,9 @@ export default function Example() {
               <span className="block text-indigo-600 xl:inline">Brown</span>
             </h1>
             <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-2xl">
-              Hello, I am a full stack developer with a
-              passion for learning and quantitative programming. I have a strong
-              skill set in backend development, graphic design, data analytics.
+              Hello, I am a full stack developer with a passion for learning and
+              quantitative programming. I have a strong skill set in backend
+              development, graphic design, data analytics.
             </p>
             <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8"></div>
           </div>
