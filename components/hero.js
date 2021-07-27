@@ -182,12 +182,13 @@ export default function Example() {
                         </a>
                       ))}
                     </div>
+                    <Link href={"/contact"}>
                     <a
-                      href="#"
                       className="block w-full px-5 py-3 text-center font-medium text-white bg-green-400 hover:bg-indigo-400"
                     >
                       Contact
                     </a>
+                    </Link>
                   </div>
                 </Popover.Panel>
               </Transition>

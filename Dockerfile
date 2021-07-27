@@ -1,5 +1,7 @@
 FROM node:12.18.1
 
+LABEL org.opencontainers.image.source=https://github.com/cloudguruab/portfolio
+
 ENV PORT 3000
 
 # Create app directory
@@ -17,5 +19,5 @@ COPY . /usr/src/app
 RUN npm run build
 EXPOSE 3000
 
-# Running the app
-CMD "npm" "run" "dev"
+# Running the app #npm start for production
+CMD "npm" "run" "dev" 
