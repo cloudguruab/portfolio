@@ -13,7 +13,7 @@ export default async (req, res) => {
   await sgMail
     .send({
       to: "ap.brown011@gmail.com",
-      from: "message.Email",
+      from: "bounces+22777547@em7011.adrianbx.com",
       subject: "New Message from portfolio!",
       text: message,
       html: message.replace(/\r\n/g, "<br>"),

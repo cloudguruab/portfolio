@@ -22,8 +22,17 @@ export default function Contact() {
       method: "POST",
       body: JSON.stringify(formData),
     });
-  }
 
+    setOpen(false)
+
+    // if (res.status === 200) {
+    //   return (
+    //     <>
+    //     <Alert />
+    //     </>
+    //   )
+    // }
+  }
   return (
     <Layout>
       <Transition.Root show={open} as={Fragment}>
@@ -122,12 +131,13 @@ export default function Contact() {
                                       className="max-w-lg mb-3 shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
                                       defaultValue={""}
                                     />
-                                    <button
-                                      type="submit"
-                                      className="w-full sm:mt-2 inline-flex items-center justify-center px-8 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-                                    >
-                                      Submit
-                                    </button>
+                                      <button
+                                        type="submit"
+                                        onClick={() => setOpen(false)}
+                                        className="w-full sm:mt-2 inline-flex items-center justify-center px-8 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                                      >
+                                        Submit
+                                      </button>
                                   </div>
                                 </div>
                               </div>
